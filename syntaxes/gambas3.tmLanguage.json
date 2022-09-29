@@ -1,0 +1,140 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "gambas3",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#commentmulti"
+		},
+		{
+			"include": "#consts"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#boolean"
+		},
+		{
+			"include": "#conditional"
+		},
+		{
+			"include": "#repeat"
+		},
+		{
+			"include": "#label"
+		},
+		{
+			"include": "#except"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#struct"
+		},
+		{
+			"include": "#special"
+		},
+		{
+			"include": "#funcs"
+		},
+		{
+			"include": "#types"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.gambas3",
+				"match": "(?i)\\b(Event|Property|Read|Const|Class|Create|Export|Inherits|Public|Private|Function|Sub|Procedure|Dim|As|Extern|Library|Create|Input|Output|Watch)\\b"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.new",
+				"match": "(?i)\\b(Let|Swap|Raise|Is|New|Inc|Dec|Div|Mod|And|Or|Not|Xor|Chmod|Chown|Chgrp|Copy|Kill|Link|MkDir|Move|RmDir|Exec|Shell|Open|Close|Memory|Pipe|Line|Flush|Lock|Unlock|Print|Read|Write|Seek|Like|Begins|Ends|Match|Randomize|Sleep|Use|Wait)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gambas3",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+            "match": "('|#!|#Endif).*",
+            "name": "comment.line"
+        },
+		"commentmulti": {
+			"begin": "#If False",
+			"end": "(#Endif|#Else)",
+			"name": "comment.block"
+		},
+		"consts": {
+			"match": "(?i)\\b(Null)\\b",
+			"name": "constant.language"
+		},
+		"number": {
+			"match": "(?i)\\b(Pi|\\+Inf|\\-Inf)\\b",
+			"name": "constant.numeric"
+		},
+		"boolean": {
+			"match": "(?i)\\b(True|False)\\b",
+			"name": "constant.language"
+		},
+		"conditional": {
+			"match": "(?i)\\b(If|Then|Else|Endif|Select|Case|End)\\b",
+			"name": "keyword.control"
+		},
+		"repeat": {
+			"match": "(?i)\\b(Do|Loop|For|Next|To|DownTo|Step|Each|In|Repeat|Until|While|Wend)\\b",
+			"name": "keyword.control"
+		},
+		"label": {
+			"match": "(?i)(^s*.+:)\\n",
+			"name": "entity.other.attribute-name"
+		},
+		"except": {
+			"match": "(?i)\\b(Catch|Debug|Error|Finally|Try)\\b",
+			"name": "keyword.control"
+		},
+		"storage": {
+			"match": "(?i)\\b(Fast|Static)\\b",
+			"name": "storage.modifier"
+		},
+		"struct": {
+			"match": "(?i)\\b(Struct|Enum)\\b",
+			"name": "storage.type"
+		},
+		"special": {
+			"match": "(?i)\\b(Break|Continue|Default|Return|Goto|GoSub|Quit|Stop|With|Last|Me|Super|Optional|ByRef)\\b",
+			"name": "keyword.operator.new"
+		},
+		"funcs": {
+			"match": "(?i:(\\b[a-zA-Z_x7f-xff][a-zA-Z0-9_x7f-xff]*?\\b)(?=\\(\\)?))",
+			"name": "support.function"
+		},
+		"types": {
+			"match": "(?i)\\b(Boolean|Byte|Short|Integer|Long|Single|Float|Date|String|Variant|Object|Pointer)\\b",
+			"name": "storage.type.cs"
+		}
+	},
+	"scopeName": "source.gambas3"
+}

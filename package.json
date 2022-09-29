@@ -1,0 +1,41 @@
+{
+    "name": "gambas3",
+    "displayName": "Gambas3 SH",
+    "description": "Gambas3 Syntax Highlight",
+    "version": "0.0.1",
+    "publisher": "microhobby",
+    "icon": "gambas-256.png",
+    "engines": {
+        "vscode": "^1.46.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "repository": {
+        "url": "https://github.com/microhobby/vscode-gambas"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "gambas3",
+                "aliases": [
+                    "Gambas",
+                    "Gambas3",
+                    "gambas"
+                ],
+                "extensions": [
+                    ".module",
+                    ".class"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "gambas3",
+                "scopeName": "source.gambas3",
+                "path": "./syntaxes/gambas3.tmLanguage.json"
+            }
+        ]
+    }
+}
